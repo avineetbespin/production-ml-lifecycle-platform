@@ -23,11 +23,11 @@ A modular, production-ready MLOps framework that automates the transition from m
    ```bash
    python src/training/train.py --model-name production-model --artifact-path model
    ```
-3. Run locally with Docker:
+3. Run locally with Docker Compose:
    ```bash
-   docker build -t production-ml-lifecycle-platform:latest .
-   docker run --rm -p 8000:8000 production-ml-lifecycle-platform:latest
+   docker-compose up --build
    ```
+   This starts MLflow server on port 5000 and the service on port 8000.
 4. Trigger Pipeline:
    - Push to `main` to trigger the automated quality gate and deployment.
 
